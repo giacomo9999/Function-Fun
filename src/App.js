@@ -6,11 +6,6 @@ import SubtractFromScore from "./components/subtractFromScore.component";
 class App extends Component {
   state = { votes: 0 };
 
-  subtractOne = () => {
-    let currentVotes = this.state.votes;
-    this.setState({ votes: currentVotes - 1 });
-  };
-
   handleUpVote = () => {
     console.log("Click happened");
     let currentVotes = this.state.votes;
