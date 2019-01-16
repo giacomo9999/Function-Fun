@@ -9,11 +9,16 @@ class AddToScore extends React.Component {
     this.setState({ voteMultiplier: e.target.value });
   };
 
+  handleSubmit = () => {
+    this.props.onFormSubmit({
+      voteMultiplier: this.state.voteMultiplier
+    });
+  };
+
   render() {
     return (
       <Card>
         <Card.Content>
-          <h2>{"Current Multiplier: " + this.state.voteMultiplier}</h2>
           <Input
             type="text"
             fluid
@@ -21,8 +26,8 @@ class AddToScore extends React.Component {
             value={this.state.voteMultiplier}
             onChange={this.handleVoteMultiplierChange}
           />
-          <Button fluid color="green" onClick={this.props.onClick}>
-            Add One
+          <Button fluid color="green" onClick={this.handleSubmit}>
+            Add Weighted Vote (+)
           </Button>
         </Card.Content>
       </Card>

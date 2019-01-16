@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Card } from "semantic-ui-react";
+import { Grid, Card, Header } from "semantic-ui-react";
 import AddToScore from "./components/addToScore.component";
 import SubtractFromScore from "./components/subtractFromScore.component";
 
@@ -32,15 +32,13 @@ class App extends Component {
           <br />
           <Card>
             <Card.Content>
-              <Card.Header>Number Of Votes:</Card.Header>
-              <br />
-              <Card.Header>
-                <h1>{this.state.votes}</h1>
-              </Card.Header>
+              <Header as="h2">{"Number Of Votes: " + this.state.votes}</Header>
+              <Header as="h4">
+                {"Vote Multiplier: " + this.state.voteMultiplier}
+              </Header>
             </Card.Content>
           </Card>
           <AddToScore
-            voteMultiplier={this.state.voteMultiplier}
             onClick={this.handleUpVote}
           />
           <SubtractFromScore onClick={this.handleDownVote} />
